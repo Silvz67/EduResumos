@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduResumo - Resumo e Rotina Escolar</title>
+  <link rel="stylesheet" href="edu.css" />
+</head>
+<body>
+  <main class="container">
+
+    <h1>EduResumo - Sua ajuda para estudar melhor</h1>
+
+   <section>
+  <h2>Gerador de Resumo</h2>
+  <textarea id="inputText" placeholder="Cole aqui o texto para resumir..."></textarea>
+  <div class="btn-group">
+    <button type="button" id="btnColar" title="Colar texto">📋 Colar</button>
+    <button type="button" id="btnCopiar" title="Copiar resumo">📄 Copiar resumo</button>
+    <button type="button" onclick="gerarResumo()">Gerar Resumo</button>
+  </div>
+  <div id="outputResumo" class="output-box"></div>
+  <div id="msgResumo" class="msg"></div>
+</section>
+
+
+
+    <hr />
+
+    <section>
+      <h2>Rotina Semanal de Estudos</h2>
+      <table id="rotinaTabela">
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Matéria</th>
+            <th>Hora</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="rotinaCorpo"></tbody>
+      </table>
+
+      <form id="formRotina" onsubmit="adicionarRotina(event)">
+        <select id="diaSemana">
+          <option value="Segunda">Segunda</option>
+          <option value="Terça">Terça</option>
+          <option value="Quarta">Quarta</option>
+          <option value="Quinta">Quinta</option>
+          <option value="Sexta">Sexta</option>
+          <option value="Sábado">Sábado</option>
+          <option value="Domingo">Domingo</option>
+        </select>
+        <input type="text" id="materiaInput" placeholder="Matéria" required />
+        <input type="time" id="horaInput" required />
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+
+    <hr />
+
+ <section>
+      <h2>Metas da Semana</h2>
+      <form id="formMetas" onsubmit="adicionarMeta(event)">
+        <input type="text" id="metaInput" placeholder="Digite sua meta aqui..." required />
+        <button type="submit">Adicionar Meta</button>
+      </form>
+      <ul id="listaMetas"></ul>
+      <p id="contadorMetas"></p>
+    </section>
+
+  </main>
+
+  <script src="edu.js"></script>
+</body>
+</html>
